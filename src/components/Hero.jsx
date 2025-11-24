@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 const Hero = () => {
 
   return (
-    <Box component="section" sx={{ py: { xs: 6, sm: 8, lg: 10 }, bgcolor: '#E91E63' }}>
+    <Box component="section" sx={{ py: { xs: 6, sm: 8, lg: 10 }, bgcolor: '#ffffff' }}>
       <Container>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, alignItems: 'center', minHeight: '70vh' }}>
           {/* Left Content */}
@@ -21,17 +21,17 @@ const Hero = () => {
             pr: { lg: 4 },
             mb: { xs: 4, lg: 0 }
           }}>
-            <Typography variant="h2" component="h1" sx={{ fontSize: { xs: 32, sm: 40, md: 48, lg: 56 }, fontWeight: 800, color: 'white' }}>
+            <Typography variant="h2" component="h1" sx={{ fontSize: { xs: 32, sm: 40, md: 48, lg: 56 }, fontWeight: 800, color: 'black' }}>
               Empowering Your Success Through Education and Support.
             </Typography>
-            <Typography variant="body1" sx={{ maxWidth: 560, color: 'rgba(255, 255, 255, 0.9)' }}>
+            <Typography variant="body1" sx={{ maxWidth: 560, color: 'rgba(0, 0, 0, 0.85)' }}>
               A dynamic e-learning platform designed to support learners with focused, flexible, and expertly guided sessions. We tailor our content to your goals and help you achieve success.
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, pt: 1 }}>
-              {/* <Button component={RouterLink} to="/signup" variant="contained" size="large" sx={{ bgcolor: 'white', color: '#E91E63', '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.9)' } }}>
+              {/* <Button component={RouterLink} to="/signup" variant="contained" size="large" sx={{ bgcolor: 'black', color: '#fff', '&:hover': { bgcolor: 'rgba(0, 0, 0, 0.9)' } }}>
                 Sign Up
               </Button> */}
-              <Button component={RouterLink} to="/about" variant="outlined" size="large" sx={{ borderColor: 'white', color: 'white', '&:hover': { borderColor: 'white', bgcolor: 'rgba(255, 255, 255, 0.1)' } }}>
+              <Button component={RouterLink} to="/about" variant="outlined" size="large" sx={{ borderColor: 'black', color: 'black', '&:hover': { borderColor: 'black', bgcolor: 'rgba(0, 0, 0, 0.04)' } }}>
                 Learn More
               </Button>
             </Box>
@@ -58,7 +58,7 @@ const Hero = () => {
               }}
               onError={(e) => {
                 e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
+                if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
               }}
             />
           </Box>

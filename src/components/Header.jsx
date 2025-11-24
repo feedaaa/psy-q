@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -13,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [headerBgColor, setHeaderBgColor] = useState('white');
+  const [headerBgColor, setHeaderBgColor] = useState('rgba(255, 255, 255, 0.95)');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,13 +28,15 @@ const Header = () => {
         if (rect.top <= headerBottom && rect.bottom >= 0) {
           const bgColor = window.getComputedStyle(section).backgroundColor;
           if (bgColor && bgColor !== 'rgba(0, 0, 0, 0)' && bgColor !== 'transparent') {
-            setHeaderBgColor(bgColor);
+            // Add transparency to the color
+            const colorWithAlpha = bgColor.replace('rgb', 'rgba').replace(')', ', 0.95)');
+            setHeaderBgColor(colorWithAlpha);
             return;
           }
         }
       }
       
-      setHeaderBgColor('white');
+      setHeaderBgColor('rgba(255, 255, 255, 0.95)');
     };
 
     handleScroll(); // Initial check
@@ -55,20 +54,36 @@ const Header = () => {
   };
 
   // Determine if text should be light based on background
-  const isLightText = headerBgColor.includes('#E91E63') || headerBgColor.includes('rgb(233, 30, 99)');
+  const isLightText = headerBgColor.includes('#E91E63') || headerBgColor.includes('233, 30, 99');
 
   return (
-    <AppBar 
-      position="sticky" 
-      elevation={0} 
+    <Box 
+      component="header"
       sx={{ 
-        bgcolor: headerBgColor,
-        transition: 'background-color 0.3s ease',
-        borderBottom: '1px solid rgba(0,0,0,0.08)'
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1200,
+        pt: 3,
+        px: 2,
+        pointerEvents: 'none'
       }}
     >
-      <Container>
-        <Toolbar disableGutters sx={{ minHeight: { xs: 56, sm: 64 } }}>
+      <Container maxWidth="lg" sx={{ pointerEvents: 'auto' }}>
+        <Box
+          sx={{
+            bgcolor: headerBgColor,
+            backdropFilter: 'blur(20px)',
+            borderRadius: '100px',
+            px: { xs: 2, sm: 4 },
+            py: 0.5,
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+            transition: 'all 0.3s ease',
+            border: '1px solid rgba(255, 255, 255, 0.2)'
+          }}
+        >
+        <Box sx={{ display: 'flex', alignItems: 'center', minHeight: { xs: 50, sm: 55 } }}>
           {/* Logo */}
           <Box
             component={RouterLink}
@@ -88,7 +103,7 @@ const Header = () => {
               src="/logos/psyq-logo-header.png"
               alt="Psy-Q Logo"
               sx={{
-                height: { xs: 128, sm: 128 },
+                height: { xs: 50, sm: 60 },
                 width: 'auto',
                 display: 'block'
               }}
@@ -137,9 +152,10 @@ const Header = () => {
             {/* <MenuItem component={RouterLink} to="/signin" onClick={handleCloseMenu}>Sign In</MenuItem>
             <MenuItem component={RouterLink} to="/signup" onClick={handleCloseMenu}>Sign Up</MenuItem> */}
           </Menu>
-        </Toolbar>
+        </Box>
+        </Box>
       </Container>
-    </AppBar>
+    </Box>
   );
 };
 
