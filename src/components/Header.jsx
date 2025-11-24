@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [headerBgColor, setHeaderBgColor] = useState('rgba(255, 255, 255, 0.95)');
+  const [headerBgColor, setHeaderBgColor] = useState('rgba(255, 255, 255, 0.1)');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,15 +28,15 @@ const Header = () => {
         if (rect.top <= headerBottom && rect.bottom >= 0) {
           const bgColor = window.getComputedStyle(section).backgroundColor;
           if (bgColor && bgColor !== 'rgba(0, 0, 0, 0)' && bgColor !== 'transparent') {
-            // Add transparency to the color
-            const colorWithAlpha = bgColor.replace('rgb', 'rgba').replace(')', ', 0.95)');
+            // Add transparency to the color for glass effect
+            const colorWithAlpha = bgColor.replace('rgb', 'rgba').replace(')', ', 0.1)');
             setHeaderBgColor(colorWithAlpha);
             return;
           }
         }
       }
       
-      setHeaderBgColor('rgba(255, 255, 255, 0.95)');
+      setHeaderBgColor('rgba(255, 255, 255, 0.1)');
     };
 
     handleScroll(); // Initial check
