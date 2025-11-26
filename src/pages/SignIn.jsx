@@ -89,7 +89,7 @@ const SignIn = () => {
           {/* Logo/Header */}
           <div className="mb-8">
             <img 
-              src="/logos/psyq-logo-header.png" 
+              src="/logos/psyg-logo-footer.png" 
               alt="Psy-Q Logo"
               className="h-12 mb-8"
               onError={(e) => {

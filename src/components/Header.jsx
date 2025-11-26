@@ -100,10 +100,10 @@ const Header = () => {
           >
             <Box
               component="img"
-              src="/logos/psyq-logo-header.png"
+              src="/logos/psyg-logo-footer.png"
               alt="Psy-Q Logo"
               sx={{
-                height: { xs: 50, sm: 60 },
+                height: { xs: 60, sm: 80 },
                 width: 'auto',
                 display: 'block'
               }}
