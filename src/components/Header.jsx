@@ -57,6 +57,7 @@ const Header = () => {
   const isLightText = headerBgColor.includes('#E91E63') || headerBgColor.includes('233, 30, 99');
 
   return (
+    <>
     <Box 
       component="header"
       sx={{ 
@@ -156,6 +157,10 @@ const Header = () => {
         </Box>
       </Container>
     </Box>
+
+    {/* Spacer to offset the fixed header so page content isn't hidden underneath it */}
+    <Box sx={{ height: { xs: '80px', sm: '96px' }, width: '100%', display: 'block' }} aria-hidden="true" />
+    </>
   );
 };
 
