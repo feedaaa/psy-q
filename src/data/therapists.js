@@ -211,10 +211,10 @@ export const therapists = [
   id: 9,
   name: "Rahina Fasmi",
   title: "Consultant Psychologist and School Counselor",
-  credentials: "5+ Years of experience",
+  credentials: "3+ Years of experience",
   languages: ["Malayalam", "English"],
   specializations: ["Student Well-being", "Parental Guidance", "Family & Couple Counselling","Anxiety and OCD Intervention", "SEND Support", "Remedial Education", "Behavioural Therapy"],
-  price: "₹899/ session",
+  price: "₹999/ session",
   image: "/images/faculty/rahina.jpg",
   location: "Kerala, India",
   rating: 4.74,
@@ -232,8 +232,35 @@ export const therapists = [
     { label: "Reports", value: 6, color: "#d9d9d9" },
   ],
 },
+{
+  id: 10,
+  name: "Aleena Maria Varghese",
+  title: "Clinical Psychologist",
+  credentials: "4+ Years of experience",
+  languages: ["Malayalam", "English", "Hindi"],
+  specializations: ["Depression, Anxiety & OCD Management ", "Childhood Disorders & Developmental Concerns", "Emotional & Behavioral Difficulties","Psychological Assessments & Testing"],
+  price: "₹999/ session",
+  image: "/images/faculty/aleena.png",
+  location: "Kerala, India",
+  rating: 4.74,
+  reviewCount: 33,
+  aiSummary:
+  "I am Aleena Maria Varghese, a dedicated Clinical Psychologist with 4 years of professional experience, trained in psychological assessment, diagnosis, and evidence-based therapeutic interventions. I hold an M.Phil in Clinical Psychology (RCI recognized) and specialize in working with individuals experiencing depression, anxiety, and OCD across the lifespan. \n\nI also have experience working with children with neurodevelopmental disorders and other childhood psychological concerns. I am skilled in conducting and interpreting psychological assessments and standardized psychological testing for diagnostic clarification and treatment planning, using a structured and individualized approach tailored to each client’s needs. \n\nMy approach is client-centered, empathetic, and collaborative, with a focus on creating a safe and supportive therapeutic environment. I am committed to ethical practice, confidentiality, and continuous professional development to deliver effective and compassionate mental health care.",
+  waitTime: 4.6,
+  bedsideManner: 4.3,
+  clearExplanations: 4.7,
+  activities: [
+    { label: "1:1 Sessions", value: 48, color: "#ca0056" },
+    { label: "Workshops", value: 22, color: "#f64c96" },
+    { label: "Group", value: 14, color: "#fca5a5" },
+    { label: "Assessments", value: 10, color: "#fae0e4" },
+    { label: "Reports", value: 6, color: "#d9d9d9" },
+  ],
+},
 ]
 
 export function getTherapistById(id) {
   return therapists.find((therapist) => String(therapist.id) === String(id))
 }
+
+
