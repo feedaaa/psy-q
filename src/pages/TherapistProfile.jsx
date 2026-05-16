@@ -46,7 +46,7 @@ export default function TherapistProfile() {
     return (
       <div style={{ minHeight: "60vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16 }}>
         <p style={{ color: "#111827", fontWeight: 600 }}>Therapist not found.</p>
-        <Link to="/therapists" style={{ color: "#ca0056", fontWeight: 700 }}>Back to therapists</Link>
+        <Link to="/therapy-services" style={{ color: "#ca0056", fontWeight: 700 }}>Back to therapists</Link>
       </div>
     )
   }

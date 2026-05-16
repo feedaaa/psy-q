@@ -115,7 +115,7 @@ const Header = () => {
           {/* Desktop Nav */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: { md: 1.5, lg: 3 }, ml: 'auto', mr: 1 }}>          
             <Button component={RouterLink} to="/" sx={{ color: isLightText ? 'white' : 'inherit', fontSize: { md: '14px', lg: '14px' } }}>Home</Button>
-            <Button component={RouterLink} to="/therapists" sx={{ color: isLightText ? 'white' : 'inherit', fontSize: { md: '14px', lg: '14px' } }}>Therapists</Button>
+            <Button component={RouterLink} to="/therapy-services" sx={{ color: isLightText ? 'white' : 'inherit', fontSize: { md: '14px', lg: '14px' } }}>Therapists</Button>
             {/* <Button component={RouterLink} to="/services" sx={{ color: isLightText ? 'white' : 'inherit', fontSize: { md: '14px', lg: '14px' } }}>Services</Button> */}
             <Button component={RouterLink} to="/about" sx={{ color: isLightText ? 'white' : 'inherit', fontSize: { md: '14px', lg: '14px' } }}>About Us</Button>
             <Button component={RouterLink} to="/contact" sx={{ color: isLightText ? 'white' : 'inherit', fontSize: { md: '14px', lg: '14px' } }}>Contact Us</Button>
@@ -133,7 +133,7 @@ const Header = () => {
             </Button> */}
             <Button 
               component={RouterLink} 
-              to="/therapists" 
+              to="/therapy-services" 
               variant="contained"
               sx={isLightText ? { bgcolor: 'white', color: '#E91E63', '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.9)' } } : {}}
             >
@@ -151,11 +151,11 @@ const Header = () => {
           {/* Mobile Menu */}
           <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu} keepMounted>
             <MenuItem component={RouterLink} to="/" onClick={handleCloseMenu}>Home</MenuItem>
-            <MenuItem component={RouterLink} to="/therapists" onClick={handleCloseMenu}>Therapists</MenuItem>
+            <MenuItem component={RouterLink} to="/therapy-services" onClick={handleCloseMenu}>Therapists</MenuItem>
             {/* <MenuItem component={RouterLink} to="/services" onClick={handleCloseMenu}>Services</MenuItem> */}
             <MenuItem component={RouterLink} to="/about" onClick={handleCloseMenu}>About Us</MenuItem>
             <MenuItem component={RouterLink} to="/contact" onClick={handleCloseMenu}>Contact Us</MenuItem>
-            <MenuItem component={RouterLink} to="/therapists" onClick={handleCloseMenu}>Book a Therapy</MenuItem>
+            <MenuItem component={RouterLink} to="/therapy-services" onClick={handleCloseMenu}>Book a Therapy</MenuItem>
             {/* {/* <MenuItem component={RouterLink} to="/signin" onClick={handleCloseMenu}>Sign In</MenuItem> */}
           </Menu>
         </Box>

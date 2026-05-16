@@ -249,7 +249,7 @@ const FacultySection = () => {
 
         {/* View All Button */}
         <Box sx={{ textAlign: 'center' }}>
-          <Link to="/therapists" style={{ textDecoration: 'none' }}>
+          <Link to="/therapy-services" style={{ textDecoration: 'none' }}>
             <Button
               variant="contained"
               endIcon={<ArrowForwardIosIcon sx={{ fontSize: 16 }} />}

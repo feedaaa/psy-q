@@ -52,6 +52,20 @@ const FAQSection = () => {
         padding: 'var(--space-8) 0',
       }}
     >
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        })}
+      </script>
       <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
         <div 
           className="text-center space-y-6 lg:space-y-8 mb-12 lg:mb-16"
